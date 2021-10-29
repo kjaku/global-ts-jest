@@ -1,0 +1,5 @@
+{
+  "scriptId": "YOURS_SCRIPT_ID",
+  "filePushOrder": ["fileToBeFirstInScope", "otherFileToBeNextInScope"],
+  "rootDir": "build"
+}
