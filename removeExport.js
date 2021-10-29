@@ -11,7 +11,7 @@ fs.readFile(filePath, 'utf8', function (err,data) {
   if (err) {
     return console.log(err);
   }
-  var result = data.replace(/export/g, '');
+  var result = data.replace(/^export /g, '');
 
   fs.writeFile(`${finalPath}/${name}`, result, 'utf8', function (err) {
      if (err) return console.log(err);
