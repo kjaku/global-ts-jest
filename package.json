@@ -6,33 +6,14 @@
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.6",
     "jest": "^27.3.1",
-    "jest-runner-tsc": "^1.6.0",
-    "rewire": "^5.0.0",
     "ts-jest": "^27.0.7",
     "typescript": "^4.4.4"
   },
   "scripts": {
     "test": "jest",
-    "build": "./node_modules/typescript/bin/tsc --listEmittedFiles --noEmit false",
+    "build": "./node_modules/typescript/bin/tsc --listEmittedFiles --noEmit false && node removeExport.js",
     "tsc": "./node_modules/typescript/bin/tsc --noEmit"
   },
   "author": "",
-  "license": "ISC",
-  "jest": {
-    "runner": "jest-runner-tsc",
-    "displayName": "tsc",
-    "moduleFileExtensions": [
-      "js",
-      "ts",
-      "tsx"
-    ],
-    "testMatch": [
-      "**/tests/**/*.test.(ts|js)"
-    ],
-    "globals": {
-      "ts-jest": {
-        "tsConfig": "tsconfig.json"
-      }
-    }
-  }
+  "license": "ISC"
 }

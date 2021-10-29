@@ -1,5 +1,4 @@
-var rewire = require("rewire");
-
+import { sum } from '../sum';
 test("adds", () => {
-  expect( rewire("../sum").__get__("sum")(100,3)).toBe(5);
+  expect(sum(100,3)).toBe(103);
 });
