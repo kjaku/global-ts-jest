@@ -1,6 +1,12 @@
 ## Use Jest with TS without modules
 
-How could it be done to stay with all functions in .ts files in global scope but use them in tests:
-- without using modules in ts files ( everythig should stay global)
+Testing functions written in Typescript in global scope in Jest 
+- without using modules in ts files 
 - without putting tests in main files
-- preferably not copying functions to test file
+
+
+## FAQ
+Q: Why to keep all in global scope and not in modules?
+A: Because it is usefull for f.e. Google Apps Script where isolated modules aren't used.
+
+Thanks to @MassivDash
