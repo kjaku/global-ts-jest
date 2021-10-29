@@ -2,11 +2,11 @@
   "name": "global-ts-jest",
   "version": "1.0.0",
   "description": "",
-  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.6",
     "jest": "^27.3.1",
+    "jest-runner-tsc": "^1.6.0",
     "rewire": "^5.0.0",
     "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",
@@ -14,27 +14,21 @@
     "typescript": "^4.4.4"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest -c jest.tsc.config.js",
     "build": "./node_modules/typescript/bin/tsc --listEmittedFiles --noEmit false",
     "tsc": "./node_modules/typescript/bin/tsc --noEmit"
   },
   "author": "",
   "license": "ISC",
   "jest": {
-    "globals": {
-      "ts-jest": {
-        "tsconfig": "tsconfig.json"
-      }
-    },
-    "moduleFileExtensions": [
-      "ts",
-      "js"
-    ],
-    "transform": {
-      "^.+\\.(ts|tsx)$": "./node_modules/ts-jest/preprocessor.js"
-    },
+    "preset": "ts-jest",
     "testMatch": [
       "**/tests/**/*.test.(ts|js)"
-    ]
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    }
   }
 }
